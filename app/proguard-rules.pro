@@ -20,4 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -printconfiguration full-configuration.pro
--keepattributes SourceFile,LineNumberTable
+-keepattributes LineNumberTable

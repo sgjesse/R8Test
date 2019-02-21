@@ -17,6 +17,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void methodThatThrowNull() {
+        CrashUtil.getNull().getClass();
+    }
+
+    public void methodThatIsInlined() {
+        methodThatThrowNull();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("inHandlerAnnonymous");
-                CrashUtil.getNull().getClass();
+                methodThatIsInlined();
             }
         });
         final Button button2 = (Button) findViewById(R.id.inHandlerInnerClass);
